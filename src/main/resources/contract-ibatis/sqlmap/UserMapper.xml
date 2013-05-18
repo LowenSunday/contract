@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD iBatis Mapper 3.0 //EN"
+	"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.cas.copyright.regulatoryboss.persistence.UserMapper">
+	<resultMap id="UserMap" type="User">
+		<id property="username"  column="USER_NAME"/>
+		<id property="password"  column="PASSWORD"/>
+		<id property="email"  column="EMAIL"/>
+		<id property="telephone"  column="TELEPHONE"/>
+		<id property="address"  column="ADDRESS"/>
+		<id property="createTime"  column="CREATE_TIME"/>
+	</resultMap>
+	<insert id="insert" parameterType="User">
+		INSERT INTO TBL_USER (
+			USER_NAME,
+			PASSWORD,
+			EMAIL,
+			TELEPHONE,
+			ADDRESS;
+			CREATE_TIME
+		)
+		VALUES(
+			#{username,jdbcType=DATE},
+			#{password,jdbcType=VARCHAR},
+			#{email,jdbcType=VARCHAR},
+			#{telephone,jdbcType=VARCHAR},
+			#{address,jdbcType=VARCHAR},
+			#{createTime,jdbcType=TIMESTAMP}
+		)
+	</insert>
+	<select id="get" parameterType="String" resultMap="UserMap">
+		SELECT * FROM TBL_USER WHERE USER_NAME = #{username}
+	</select>
+	
+	<update id="update" parameterType="User">
+		UPDATE TBL_USER
+		<set>
+			<if test="username != null">USER_NAME = #{username,jdbcType=VARCHAR},</if>
+			<if test="password != null">PASSWORD = #{password,jdbcType=VARCHAR},</if>
+			<if test="email != null">EMAIL = #{email,jdbcType=VARCHAR},</if>
+			<if test="telephone != null">TELEPHONE = #{telephone,jdbcType=VARCHAR},</if>
+			<if test="address != null">ADDRESS = #{address,jdbcType=VARCHAR},</if>
+			<if test="createTime != null">CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},</if>
+		</set>
+		WHERE USER_NAME =  #{username,jdbcType=VARCHAR}
+	</update>
+
+	<delete id="delete" parameterType="String">
+		DELETE FROM TBL_USER WHERE USER_NAME = #{username,jdbcType=VARCHAR}
+	</delete>
+</mapper>

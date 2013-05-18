@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD iBatis Mapper 3.0 //EN"
+	"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.cas.copyright.regulatoryboss.persistence.PropertyMapper">
+	<resultMap id="PropertyMap" type="Property">
+		<id property="name"  column="NAME"/>
+		<id property="value"  column="VALUE"/>
+	</resultMap>
+	<insert id="insert" parameterType="Property">
+		INSERT INTO TBL_PROPERTY (
+			NAME,
+			VALUE
+		)
+		VALUES(
+			#{name,jdbcType=VARCHAR},
+			#{value,jdbcType=VARCHAR}
+		)
+	</insert>
+
+	
+	<select id="get" parameterType="String" resultMap="PropertyMap">
+		SELECT * FROM TBL_PROPERTY WHERE NAME = #{name}
+	</select>
+	
+	<select id="getProperties" resultMap="PropertyMap">
+		SELECT * FROM TBL_PROPERTY
+	</select>
+	
+	
+	<update id="update" parameterType="Property">
+		UPDATE TBL_PROPERTY
+		<set>
+			<if test="name != null">NAME = #{name,jdbcType=VARCHAR},</if>
+			<if test="value != null">VALUE = #{value,jdbcType=VARCHAR}</if>
+		</set>
+		WHERE NAME =  #{name,jdbcType=VARCHAR}
+	</update>
+
+	<delete id="delete" parameterType="String">
+		DELETE FROM TBL_PROPERTY WHERE NAME = #{name,jdbcType=VARCHAR}
+	</delete>
+</mapper>
