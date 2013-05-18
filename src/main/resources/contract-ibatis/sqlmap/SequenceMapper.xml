@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD iBatis Mapper 3.0 //EN"
+	"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="org.sic.contract.persistence.UserMapper">
+	<resultMap id="SequenceMap" type="Sequence">
+		<id property="name"  column="NAME"/>
+		<id property="value"  column="VALUE"/>
+	</resultMap>
+	
+	<select id="getId" parameterType="String" resultType="Long">
+		SELECT VALUE FROM SYS_SEQUENCCE WHERE NAME = #{name,jdbcType=VARCHAR}
+	</select>
+	
+	<update id="setId" parameterType="Sequence">
+		UPDATE SYS_SEQUENCCE
+		VALUE = #{value,jdbcType=Long}
+		WHERE NAME = #{name,jdbcType=VARCHAR}
+	</update>
+</mapper>
