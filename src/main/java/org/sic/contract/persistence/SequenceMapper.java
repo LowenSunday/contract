@@ -1,9 +1,9 @@
 package org.sic.contract.persistence;
 
-import java.util.Map;
+import org.sic.contract.entity.Sequence;
 
 public interface SequenceMapper {
 	Long getId(String sequenceName);
 	
-	void setId(Map<String,Long> params);
+	void setId(Sequence sequence);
 }

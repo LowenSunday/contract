@@ -10,7 +10,7 @@
 		<id property="md5"  column="MD5"/>
 		<id property="createTime"  column="CREATE_TIME"/>
 	</resultMap>
-	<insert id="insert" parameterType="CONTRACT">
+	<insert id="insert" parameterType="Contract">
 		INSERT INTO TBL_CONTRACT (
 			ID,
 			CONTRACT_NAME,
@@ -28,14 +28,14 @@
 		SELECT * FROM TBL_CONTRACT WHERE WHERE ID =  #{id,jdbcType=BIGINT}
 	</select>
 	
-	<select id="queryInitiatedByCompanyId" parameterType="Long" resultType="ContractMap">
+	<select id="queryInitiatedByCompanyId" parameterType="Long" resultMap="ContractMap">
 		SELECT TBL_CONTRACT.ID,CONTRACT_NAME,FILE_URI,MD5,CREATE_TIME
 		FROM REL_INITIATE, TBL_CONTRACT
 		WHERE COMPANY_ID = #{companyId,jdbcType=VARCHAR}
 		AND  TBL_CONTRACT.ID = CONTRACT_ID
 	</select>
 	
-	<select id="querySignedByCompanyId" parameterType="Long" resultType="ContractMap">
+	<select id="querySignedByCompanyId" parameterType="Long" resultMap="ContractMap">
 		SELECT TBL_CONTRACT.ID,CONTRACT_NAME,FILE_URI,MD5,CREATE_TIME
 		FROM REL_SIGNED, TBL_CONTRACT
 		WHERE COMPANY_ID = #{companyId,jdbcType=VARCHAR}
