@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd"
+	default-autowire="byName">
+
+	<import resource="classpath:/contract-spring/contract-datasource.xml" />
+	<import resource="classpath:/contract-spring/contract-mapper.xml" />
+	<import resource="classpath:/contract-spring/contract-service.xml" />
+	<import resource="classpath:/contract-spring/contract-biz.xml" />
+	<import resource="classpath:/contract-spring/contract-action.xml" />
+	<bean id="springContextUtils" class="org.sic.contract.utils.SpringContextUtils"/>
+	<bean id="viewLogicHelper" class=" org.sic.contract.action.ViewLogicHelper"/>
+	<!--缓存拦截器 
+	<bean id="cacheInterceptor" class="com.yeepay.g3.utils.cache.config.CacheInterceptor" />
+	
+	<bean id="cacheProxyCreator"
+		class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+		<property name="order" value="1"></property>
+		<property name="interceptorNames">
+			<list>
+				<value>cacheInterceptor</value>
+			</list>
+		</property>
+		<property name="beanNames">
+			<list>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="performanceAspect"
+		class="com.yeepay.g3.utils.event.ext.perf.PerformanceAspect">
+		<property name="threshold" value="150" />
+		<property name="excludeMethod">
+			<list>
+				<value>toString</value>
+			</list>
+		</property>
+	</bean>
+	<aop:config>
+		<aop:aspect id="performanceAspectId" ref="performanceAspect">
+			<aop:pointcut id="pointcut"
+				expression="execution(* com..*.*Service.*(..)) || execution(* com..*.*Dao.*(..)) || execution(* com..*.*Facade.*(..)) || execution(* com..*.*Biz.*(..)) || execution(* com..*.*Handler.*(..)) || execution(* com..*.*Converter.*(..)) || execution(* com..*.*Generator.*(..)) || execution(* com..*.*Helper.*(..))" />
+			<aop:around pointcut-ref="pointcut" method="intercept" />
+		</aop:aspect>
+	</aop:config>
+-->
+</beans>
