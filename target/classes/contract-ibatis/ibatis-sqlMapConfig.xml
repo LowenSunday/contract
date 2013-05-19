@@ -18,8 +18,9 @@
 	</settings>
 
 	<typeAliases>
-		<typeAlias alias="DigitalContent" type="com.cas.copyright.regulatoryboss.entity.DigitalContent" />
-		<typeAlias alias="User" type="com.cas.copyright.regulatoryboss.entity.User" />
-		<typeAlias alias="Property" type="com.cas.copyright.regulatoryboss.entity.Property" />
+		<typeAlias alias="User" type="org.sic.contract.entity.User" />
+		<typeAlias alias="Company" type="org.sic.contract.entity.Company" />
+		<typeAlias alias="Contract" type="org.sic.contract.entity.Contract" />
+		<typeAlias alias="Sequence" type="org.sic.contract.entity.Sequence" />
 	</typeAliases>
 </configuration>

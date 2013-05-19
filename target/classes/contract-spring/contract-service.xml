@@ -11,8 +11,5 @@
 	default-autowire="byName">
 
 	<context:annotation-config />
- 	<bean id="userService" 
- 		class="org.sic.contract.service.impl.UserServiceImpl"/>
-	<bean id="propertyService"
-		class="org.sic.contract.service.impl.PropertyServiceImpl" init-method="init"/>
+ 	<bean id="userService" class="org.sic.contract.service.impl.UserServiceImpl"/>
 </beans>

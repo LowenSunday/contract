@@ -4,4 +4,4 @@
 <%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator" prefix="decorator" %>
 <%@ taglib uri="http://www.opensymphony.com/sitemesh/page" prefix="page" %>
 <%@ taglib prefix="s" uri="/struts-tags" %>
-<c:set var="ctxPath" value="${pageContext.request.contextPath}" scope="session"/>
+<c:set var="ctxPath" value="${pageContext.request.contextPath	 }" scope="session"/>
