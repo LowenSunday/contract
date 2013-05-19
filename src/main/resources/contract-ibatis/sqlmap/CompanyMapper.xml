@@ -17,7 +17,7 @@
 			REPRESENTATIVE
 		)
 		VALUES(
-			#{id,jdbcType=Long},
+			#{id,jdbcType=BIGINT},
 			#{companyName,jdbcType=VARCHAR},
 			#{address,jdbcType=VARCHAR},
 			#{representative,jdbcType=VARCHAR},
@@ -25,6 +25,10 @@
 	</insert>
 	<select id="findByid" parameterType="Long" resultMap="CompanyMap">
 		SELECT * FROM TBL_COMPANY WHERE WHERE ID =  #{id,jdbcType=BIGINT}
+	</select>
+	
+	<select id="queryByName" parameterType="String" resultMap="CompanyMap">
+		SELECT * FROM TBL_COMPANY WHERE COMPANY_NAME like "%#{companyName,jdbcType=VARCHAR}%";
 	</select>
 	
 	<update id="update" parameterType="Company">
