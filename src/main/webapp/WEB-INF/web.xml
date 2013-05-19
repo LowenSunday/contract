@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
-	<display-name>copyright-regulatory</display-name>
+	<display-name>合同管理系统</display-name>
 	<context-param>
 		<description>jstl massage resource bundle</description>
 		<param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
@@ -71,9 +71,20 @@
 		<servlet-name>freemarker</servlet-name>
 		<url-pattern>*.ftl</url-pattern>
 	</servlet-mapping>
-	
+
+  <!-- 随机生成验证码servlet -->  
+  <!-- 
+  <servlet>
+    <servlet-name>PictureCheckCode</servlet-name>
+    <servlet-class>org.sic.contract.tool.PictureCheckCode</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PictureCheckCode</servlet-name>
+    <url-pattern>/PictureCheckCode.jpeg</url-pattern>
+  </servlet-mapping>
+  -->	
 	<welcome-file-list>
-  		<welcome-file>page/login.jsp</welcome-file>
+  		<welcome-file>page/main/login.jsp</welcome-file>
  	</welcome-file-list>
  	
 </web-app>

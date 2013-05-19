@@ -15,8 +15,7 @@
 	<import resource="classpath:/contract-spring/contract-service.xml" />
 	<import resource="classpath:/contract-spring/contract-biz.xml" />
 	<import resource="classpath:/contract-spring/contract-action.xml" />
-	<bean id="springContextUtils" class="org.sic.contract.utils.SpringContextUtils"/>
-	<bean id="viewLogicHelper" class=" org.sic.contract.action.ViewLogicHelper"/>
+	
 	<!--缓存拦截器 
 	<bean id="cacheInterceptor" class="com.yeepay.g3.utils.cache.config.CacheInterceptor" />
 	
