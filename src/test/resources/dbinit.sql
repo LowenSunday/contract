@@ -1,6 +1,6 @@
 delete from TBL_USER where ID in (-1,-2);
-insert into TBL_USER values(-1,-1,'kevin','kevin','kevin@-16-3.com','-1-3-3-1-2-345678');
-insert into TBL_USER values(-2,-1,'zm','zm','zm-1-2-1987@-16-3.com','-1-3-3-1-2-345678');
+insert into TBL_USER values(-1,-1,'kevin','kevin','kevin@-16-3.com','1312345678');
+insert into TBL_USER values(-2,-1,'zm','zm','zm-1-2-1987@-16-3.com','1312345678');
 
 delete from TBL_GROUP where ID in (-1,-2,-3);
 insert into TBL_GROUP values(-1,'dev','开发部门');
