@@ -1,0 +1,9 @@
+delete from TBL_USER;
+delete from TBL_GROUP;
+delete from TBL_ROLE;
+delete from REL_USER_GROUP;
+delete from REL_GROUP_ROLE;
+delete from TBL_COMPANY;
+delete from TBL_CONTRACT;
+delete from REL_INITIATE;
+delete from REL_SIGNED;

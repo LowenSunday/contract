@@ -4,7 +4,7 @@
 
 <mapper namespace="org.sic.contract.persistence.ContractMapper">
 	<resultMap id="ContractMap" type="Contract">
-		<id property="Id"  column="ID"/>
+		<id property="id"  column="ID"/>
 		<id property="contractName"  column="CONTRACT_NAME"/>
 		<id property="fileUri"  column="FILE_URI"/>
 		<id property="md5"  column="MD5"/>
@@ -16,16 +16,33 @@
 			CONTRACT_NAME,
 			FILE_URI,
 			MD5,
+			CREATE_TIME
 		)
 		VALUES(
-			#{id,jdbcType=Long},
+			#{id,jdbcType=BIGINT},
 			#{contractName,jdbcType=VARCHAR},
 			#{fileUri,jdbcType=VARCHAR},
 			#{md5,jdbcType=VARCHAR},
+			#{createTime,jdbcType=TIMESTAMP}
 		)
 	</insert>
 	<select id="findById" parameterType="Long" resultMap="ContractMap">
-		SELECT * FROM TBL_CONTRACT WHERE WHERE ID =  #{id,jdbcType=BIGINT}
+		SELECT * FROM TBL_CONTRACT WHERE  ID =  #{id,jdbcType=BIGINT}
+	</select>
+	
+	<select id="findByMD5" parameterType="String" resultMap="ContractMap">
+	SELECT * FROM TBL_CONTRACT WHERE MD5 = #{md5,jdbcType=VARCHAR}
+	</select>
+	
+	
+	<select id="findByContractName" parameterType="String" resultMap="ContractMap">
+	<!--
+	SELECT * FROM TBL_CONTRACT WHERE CONTRACT_NAME like CONCAT('%', #{contractName,jdbcType=VARCHAR},'%')
+	  -->
+	<!--
+	SELECT * FROM TBL_CONTRACT WHERE CONTRACT_NAME LIKE '%$contractName$%'
+	--> 
+	SELECT ID,CONTRACT_NAME,FILE_URI,MD5,CREATE_TIME FROM TBL_CONTRACT WHERE CONTRACT_NAME LIKE #{contractName,jdbcType=VARCHAR}
 	</select>
 	
 	<select id="queryInitiatedByCompanyId" parameterType="Long" resultMap="ContractMap">

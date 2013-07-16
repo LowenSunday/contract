@@ -3,9 +3,9 @@ package org.sic.contract.exception;
 public class SicUserException extends SicException {
 	private static final long serialVersionUID = 2689113786950473625L;
 	
-	public static SicUserException USER_EXIST_EXCEPTION = new SicUserException("ÓÃ»§ÃûÒÑ¾­´æÔÚ");
+	public static SicUserException USER_EXIST_EXCEPTION = new SicUserException("ç”¨æˆ·å·²ç»å­˜åœ¨");
 	
-	public static SicUserException USER_NOTEXIST_EXCEPTION = new SicUserException("ÓÃ»§Ãû²»´æÔÚ");
+	public static SicUserException USER_NOTEXIST_EXCEPTION = new SicUserException("ç”¨æˆ·ä¸å­˜åœ¨");
 	
 	public SicUserException(String message) {
 		super(message);

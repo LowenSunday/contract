@@ -13,4 +13,5 @@ public interface UserService {
 	void deleteUserById(Long id);
 	
 	boolean exists(String userName);
+	
 }

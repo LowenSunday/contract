@@ -20,7 +20,7 @@
 			#{id,jdbcType=BIGINT},
 			#{companyName,jdbcType=VARCHAR},
 			#{address,jdbcType=VARCHAR},
-			#{representative,jdbcType=VARCHAR},
+			#{representative,jdbcType=VARCHAR}
 		)
 	</insert>
 	<select id="findByid" parameterType="Long" resultMap="CompanyMap">

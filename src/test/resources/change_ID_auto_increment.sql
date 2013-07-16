@@ -1,0 +1,9 @@
+alter table TBL_USER change ID ID bigint(20) auto_increment not null ;
+alter table TBL_GROUP change ID ID bigint(20) auto_increment not null ;
+alter table TBL_ROLE change ID ID bigint(20) auto_increment not null ;
+alter table REL_USER_GROUP change ID ID bigint(20) auto_increment not null ;
+alter table REL_GROUP_ROLE change ID ID bigint(20) auto_increment not null ;
+alter table TBL_COMPANY change ID ID bigint(20) auto_increment not null ;
+alter table TBL_CONTRACT change ID ID bigint(20) auto_increment not null ;
+alter table REL_INITIATE change ID ID bigint(20) auto_increment not null ;
+alter table REL_SIGNED change ID ID bigint(20) auto_increment not null ;

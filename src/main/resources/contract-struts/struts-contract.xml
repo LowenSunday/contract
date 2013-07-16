@@ -3,12 +3,43 @@
           "http://struts.apache.org/dtds/struts-2.0.dtd">
 	<struts>
 	<package name="user" extends="struts-default" namespace="/">
-		<action name="login" method="login"
-			class="com.cas.copyright.regulatoryboss.action.user.LoginAction">
-			<result name="input">/page/user/login.jsp</result>
-			<result name="success">/index.jsp</result>
+	
+		<action name="login" 
+			class="org.sic.contract.action.LoginAction">
+			<result name="input">/page/main/login.jsp</result>
+			<result name="success">/page/main/main2.jsp</result>
 			<result name="error">/index.jsp</result>
 			</action>
+			
+			<action name="upload" 
+			class="org.sic.contract.action.CommitContractAction">
+			<result name="input">/page/main/upload.jsp</result>
+			<result name="success">/page/main/uploadResult.jsp</result>
+			<result name="error">/page/main/upload.jsp</result>
+			</action>
+			
+			<action name="verify" 
+			class="org.sic.contract.action.VerifyContractAction">
+			<result name="input">/page/main/verify.jsp</result>
+			<result name="success">/page/main/verifyResult.jsp</result>
+			<result name="error">/page/main/verify.jsp</result>
+			</action>
+			
+			
+			<action name="exit" 
+			class="org.sic.contract.action.LoginOutAction">
+			<result name="input">/page/main/main2.jsp</result>
+			<result name="success">/page/main/login.jsp</result>
+			<result name="error">/page/main/main2.jsp</result>
+			</action>
+			
+			
+			<action name="lookUploadFile" 
+			class="org.sic.contract.action.LookUploadFileAction">
+			</action>
+			
+			
+			
 	<action name="PictureCheckCode" 
 			class="org.sic.contract.action.PictureCheckCodeAction">
 			<result type="stream">      

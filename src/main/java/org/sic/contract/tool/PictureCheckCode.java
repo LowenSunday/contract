@@ -55,10 +55,11 @@ public class PictureCheckCode extends HttpServlet
           
         g.setColor(idCode.getRandomColor(180, 200)) ;  
         idCode.drawRandomLines(g, 160) ;  //画线
-        String str=idCode.drawRandomString(4, g) ;//在g上写字符，验证码长度为4 
-        HttpSession session=request.getSession();
-        session.setAttribute("validateString", str);//将str放入session中，以便比较用户输入的验证码
-        System.out.println("in PictureCheckCode str is"+str);
+        String str=idCode.drawRandomString(4, g) ;//在g上写字符，验证码长度为4
+        request.getServletContext().setAttribute("validateString", str);
+        //HttpSession session=request.getSession();
+        //session.setAttribute("validateString", str);//将str放入Application中，以便比较用户输入的验证码
+        System.out.println("in PictureCheckCode str is: "+str);
         g.dispose() ;//releases any system resources that it is using. A Graphics object cannot be used after disposehas been called.  
         ImageIO.write(image, "JPEG", response.getOutputStream());  
     }  

@@ -34,11 +34,11 @@ public class UserServiceImpl implements UserService{
 				sequence.setValue(id + 1);
 				sequenceMapper.setId(sequence);
 			}catch(Exception e){
-				logger.error("ÓÃ»§Ìí¼ÓÊ§°Ü:\n" + e.getMessage());
+				logger.error("ï¿½Ã»ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½:\n" + e.getMessage());
 				throw new SicUserException(e.getMessage());
 			}
 		}else{
-			logger.error("ÓÃ»§Ìí¼ÓÊ§°Ü:\n" + SicUserException.USER_EXIST_EXCEPTION.getMessage());
+			logger.error("ç”¨æˆ·å·²ç»å­˜åœ¨:\n" + SicUserException.USER_EXIST_EXCEPTION.getMessage());
 			throw SicUserException.USER_EXIST_EXCEPTION;
 		}
 	}

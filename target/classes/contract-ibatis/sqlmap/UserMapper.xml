@@ -6,7 +6,7 @@
 	<resultMap id="UserMap" type="User">
 		<id property="id"  column="ID"/>
 		<id property="userName"  column="USER_NAME"/>
-		<id property="companyId"  column="COMANPY_ID"/>
+		<id property="companyId"  column="COMPANY_ID"/>
 		<id property="password"  column="PASSWORD"/>
 		<id property="email"  column="EMAIL"/>
 		<id property="phone"  column="PHONE"/>
@@ -14,6 +14,7 @@
 	<insert id="insert" parameterType="User">
 		INSERT INTO TBL_USER (
 			ID,
+			COMPANY_ID,
 			USER_NAME,
 			PASSWORD,
 			EMAIL,
@@ -21,6 +22,7 @@
 		)
 		VALUES(
 			#{id,jdbcType=BIGINT},
+			#{companyId,jdbcType=BIGINT},
 			#{userName,jdbcType=VARCHAR},
 			#{password,jdbcType=VARCHAR},
 			#{email,jdbcType=VARCHAR},

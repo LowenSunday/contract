@@ -17,22 +17,36 @@ function mit()
   var regu="^[0-9a-zA-Z_]{4,20}$";
   re=new RegExp(regu);
   
-  var str=document.getElementById("name").value;
+  var str=document.getElementById("userName").value;
   
   if(str.length==0 || !re.test(str))
   {
   alert("用户名不能为空！且长度为4-20！只能包含数字,字母,下划线");
-  document.getElementById("name").focus();
+  document.getElementById("userName").focus();
   return false;
   }
   
+  /*
   regu="^[0-9a-zA-Z_]{1,20}@[0-9a-zA-Z_]+\.[a-z0-9]{2,3}$";
   re=new RegExp(regu);
   str=document.getElementById("email").value;
   if(str.length==0 || !re.test(str))
-  {
+  { 
   alert("邮箱格式不对！");
   document.getElementById("email").focus();
+  return false;
+  
+  }
+  */
+  var regu="^[0-9a-zA-Z_]{4,20}$";
+  re=new RegExp(regu);
+  
+  var str=document.getElementById("password").value;
+  
+  if(str.length==0 || !re.test(str))
+  {
+  alert("密码不能为空！且长度为4-20！只能包含数字,字母,下划线");
+  document.getElementById("password").focus();
   return false;
   }
   
@@ -42,11 +56,11 @@ function mit()
 </head>
 <body>
 <font color="red">
-<s:if test="name != null">
-<s:fielderror><s:param>name</s:param></s:fielderror><br/>
+<s:if test="userName != null">
+<s:fielderror><s:param>userName</s:param></s:fielderror><br/>
 </s:if>
-<s:if test="email != null">
-<s:fielderror><s:param>email</s:param></s:fielderror><br/>
+<s:if test="password != null">
+<s:fielderror><s:param>password</s:param></s:fielderror><br/>
 </s:if>
 <s:if test="validatecode != null">
 <s:fielderror><s:param>validatecode</s:param></s:fielderror><br/></s:if>
@@ -56,12 +70,12 @@ function mit()
 <tbody>
 <tr>
 <td class="r_cell_1"><span>用户名</span><font color="red">请输入您的用户名</font></td>
-<td class="r_cell_2"><input type="text" class="input-text" name="name" id="name"></td>
+<td class="r_cell_2"><input type="text" class="input-text" name="userName" id="userName"></td>
 </tr>
 
 <tr>
 <td class="r_cell_1"><span>密码</span><font color="red">请输入您的密码</font></td>
-<td class="r_cell_2"><input type="text" class="input-text" name="email" id="email"></td>
+<td class="r_cell_2"><input type="text" class="input-text" name="password" id="password"></td>
 </tr>
 
 <tr>
@@ -77,5 +91,7 @@ function mit()
 
 <div class="r_su"><input type="submit" class="button r_submit" value="登陆" onClick="return mit()" /></div>
 </form>
+
+
 </body>
 </html>

@@ -66,7 +66,7 @@ public class PictureCheckCodeAction extends ActionSupport
      idCode.drawRandomLines(g, 160) ;  //画线
      String str=idCode.drawRandomString(4, g) ;//在g上写字符，验证码长度为4
      ActionContext.getContext().getSession().put("random",str);
-     System.out.println("in PictureCheckCode str is"+str);
+     System.out.println("in PictureCheckCodeAction str is: "+str);
      g.dispose() ;//releases any system resources that it is using. A Graphics object cannot be used after disposehas been called.  
      
      ByteArrayOutputStream bos=new ByteArrayOutputStream();
